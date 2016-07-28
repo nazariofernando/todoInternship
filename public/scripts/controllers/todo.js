@@ -12,7 +12,15 @@ angular.module('todoListApp')
       if(todo.edited) {
         return todo
       };
-    })
-    dataService.saveTodos(filteredTodos);
+    });
+    dataService.saveTodos(filteredTodos)
+    .finally($scope.resetTodoStates());
   }; 
+
+  $scope.resetTodoStates = function() {
+    $scope.todos.forEach(function(todo) {
+      todo.edited = false;
+    });
+  };
+
 });

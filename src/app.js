@@ -2,7 +2,8 @@
 
 //seting requirements
 var express = require('express'),
-    router_api = require('./api')
+    router_api = require('./api'),
+    parser = require('body-parser')
 ;
 
 //init our app
@@ -13,6 +14,9 @@ require('./database.js');
 
 //requiring seed data
 require('./seed.js'); 
+
+//using external modules
+app.use(parser.json());
 
 //defining static (public) folder as middleware
 app.use('/', express.static('public'));
