@@ -8,6 +8,12 @@ var express = require('express'),
 //init our app
 var app = express();
 
+//requiring the database
+require('./database.js');
+
+//requiring seed data
+require('./seed.js'); 
+
 //defining static (public) folder as middleware
 app.use('/', express.static('public'));
 
