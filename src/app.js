@@ -25,6 +25,7 @@ app.use('/', express.static('public'));
 app.use('/api', router_api);
 
 //localhost
-app.listen(3000, function() {
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
 	console.log("The app is running on port 3000");
 });

@@ -2,7 +2,9 @@
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/mean-todo', function(err) {
+var mongohost = process.env.MONGODB_URI;
+
+mongoose.connect(mongohost || 'mongodb://localhost/busways', function(err) {
 	if(err) {
 		console.log("Failed connecting to MongoDB");
 	}
