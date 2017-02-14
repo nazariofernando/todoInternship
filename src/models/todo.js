@@ -10,7 +10,8 @@ var mongoose = require('mongoose');
 //schema construction
 var todoSchema = new mongoose.Schema({
 	name: String,
-	completed: Boolean
+	completed: Boolean,
+	date: Date
 });
 
 //creating todo model

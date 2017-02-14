@@ -50,6 +50,19 @@ router_api.get('/todos', function(req, res) {
 		res.json({'todo': todo, message: "Todo Created!"});
 	});
 
+})
+
+.delete('/todos/:id', function(req, res) {
+
+	var id = req.params.id;
+
+	Todo.findByIdAndRemove(id, function(err, todo) {
+		if(err){
+			return res.status(500).json({ message: err.message });
+		}
+		res.json({'todo': todo, message: "Todo deleted!"})
+	});
+
 })	
 
 ;

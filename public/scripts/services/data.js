@@ -2,12 +2,17 @@
 
 angular.module('todoListApp')
 .service('dataService', function($http, $q) {
+
   this.getTodos = function(cb) {
     $http.get('/api/todos').then(cb);
   };
   
   this.deleteTodo = function(todo) {
-    console.log("I deleted the " + todo.name + " todo!");
+    $http.delete('/api/todos/' + todo._id).then(function(result){
+      console.log("I deleted the " + todo.name + " todo!");
+    }, function(result) {
+      console.log(result)
+    });
   };
   
   this.saveTodos = function(todos) {

@@ -1,7 +1,7 @@
 {
-  "name": "mean-todo",
+  "name": "todo",
   "version": "1.0.0",
-  "description": "mean stack tutorial",
+  "description": "simple mean todo",
   "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

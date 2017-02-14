@@ -2,8 +2,10 @@
 
 angular.module('todoListApp')
 .controller('todoCtrl', function($scope, dataService) {
+
   $scope.deleteTodo = function(todo, index) {
     $scope.todos.splice(index, 1);
+    console.log(todo);
     dataService.deleteTodo(todo);
   };
   
